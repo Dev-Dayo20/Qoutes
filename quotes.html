@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quotes Generator</title>
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-image: linear-gradient(lightblue, purple);
+        }
+
+        h2{
+            font-size: 45px;
+            font-family: sans-serif;
+            color: azure;
+        }
+
+        button{
+            padding: 10px;
+            font-size: 23px;
+            margin-top: 20px;
+            border-radius: 6px;
+            border: none;
+            outline: none;
+            color: blueviolet;
+            font-weight: bolder;
+        }
+
+        button:hover{
+            cursor: pointer;
+            background-color: aliceblue;
+            color: dodgerblue;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Quote Generator</h2>
+        <button>Generate</button>
+        <button type="reset" id="reset">Reset</button>
+    </div>
+
+
+    <script>
+        var h2 = document.querySelector('h2');
+        var btn = document.querySelector('button');
+
+
+        btn.addEventListener('click', function(){
+            const quotes = [
+                "There is no smoke without fire",
+                "Honesty is the best policy",
+                "One with God is majority",
+                "Like Father like son",
+                "There is no knowledge that is not power",
+                "The hardway is the only way",
+                "There is no shortcut to success",
+                "Like attracts like",
+                "Birds of the same feather fly together",
+                "The higher you go the hotter it becomes",
+                "Blood is thicker than water",
+                "Boys will be boys"
+            ];
+
+
+            let randnum = Math.floor(Math.random()*quotes.length);
+            h2.innerHTML = "<q>"+quotes[randnum]+"</q>";
+            console.log(quotes[randnum]);
+        })
+        
+        const resetBtn = document.getElementById("reset");
+            
+            resetBtn.addEventListener('click', function() {
+                h2.innerHTML = "Qoute Generator"
+            })
+            
+        let randomNum =  Math.floor(Math.random() * 5)  
+        console.log(randomNum);
+
+    </script>
+</body>
+</html>
